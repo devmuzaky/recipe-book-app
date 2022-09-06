@@ -1,6 +1,6 @@
 import {Injectable} from "@angular/core";
 import {HttpClient, HttpErrorResponse} from "@angular/common/http";
-import {catchError, Subject, tap, throwError} from "rxjs";
+import {BehaviorSubject, catchError, tap, throwError} from "rxjs";
 import {User} from "./user.model";
 
 export interface AuthResponseData {
@@ -17,9 +17,16 @@ export interface AuthResponseData {
 })
 export class AuthService {
 
-  user = new Subject<User>();
+  user = new BehaviorSubject<User>(new User(
+    "",
+    "",
+    "",
+    new Date(),
+  ));
 
-  constructor(private http: HttpClient) {
+
+  constructor(private http: HttpClient
+  ) {
   }
 
   signup(email: string, password: string) {
@@ -50,18 +57,16 @@ export class AuthService {
       }));
   }
 
-  private handleAuthentication(
-    email: string,
-    userId: string,
-    token: string,
-    expiresIn: number
-  ) {
+  handleAuthentication(email: string, userId: string, token: string, expiresIn: number) {
     const expirationDate = new Date(new Date().getTime() + expiresIn * 1000);
     const user = new User(email, userId, token, expirationDate);
     this.user.next(user);
   }
 
-  private handleError(errorRes: HttpErrorResponse) {
+  handleError(errorRes
+                :
+                HttpErrorResponse
+  ) {
     let errorMessage = 'An error occurred';
     if (!errorRes.error || !errorRes.error.error) {
       return throwError(errorMessage);
