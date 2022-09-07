@@ -14,7 +14,7 @@ export class AuthComponent {
 
   isLoggingMode = true;
   isLoading = false;
-  error: string = "";
+  error: string | null = "";
 
   constructor(private authService: AuthService, private router: Router) {
   }
@@ -58,4 +58,10 @@ export class AuthComponent {
     *   Use resetForm after the form is validated and submitted, otherwise use reset.
     * */
   }
+
+  onHandleError() {
+    this.error = null;
+  }
+
+
 }
