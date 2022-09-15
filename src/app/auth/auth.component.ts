@@ -7,7 +7,7 @@ import {AlertComponent} from "../shared/alert/alert.component";
 import {PlaceholderDirective} from "../shared/placeholder/placeholder.directive";
 
 @Component({
-  selector: 'app-auth',
+  selector: 'app-auth-module',
   templateUrl: './auth.component.html'
 
 })

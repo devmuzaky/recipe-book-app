@@ -28,7 +28,7 @@ export class AuthGuard implements CanActivate {
       })
       //   tap(isAuth => {
       //   if (!isAuth) {
-      //     this.router.navigate(['./auth'])
+      //     this.router.navigate(['./auth-module'])
       //   }
       // })
     );
@@ -48,7 +48,7 @@ export class AuthGuard implements CanActivate {
       return !!user;
     }), tap(isAuth => {
       if (!isAuth) {
-        this.router.navigate(['./auth'])
+        this.router.navigate(['./auth-module'])
       }
     }));
   }
