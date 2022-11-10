@@ -1,4 +1,21 @@
-# BooksApp
+
+# Recipe Book
+
+## Live Project
+The live project can be found [Here](https://recipe-book-b95aa.web.app/auth)
+
+Experimenting with Angular 14 features
+
+The project is a recipe book SPA that allows users to browse recipes and manage a shopping list. The project has a [Firebase](https://firebase.google.com/) backend which is used to allow users to create accounts and sign in with their credentials. Authenticated users can then edit recipes, plus save and fetch data from the Firebase endpoint.
+
+## Among the Angular 14 features that this project exhibits are:
+- authentication & route protection;
+- HTTP request handling;
+- services & dependency injection;
+- routing;
+- observables;
+- forms (both template-driven and reactive);
+- directives, components & databinding.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.1.0.
 
